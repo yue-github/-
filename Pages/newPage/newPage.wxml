@@ -1,0 +1,38 @@
+<view class="banenr-container">
+    <swiper class="banner-swiper" 
+    indicator-dots="{{dots}}" autoplay="{{autoplay}}"
+    interval="{{interval}}" indicator-color="{{indicatorColor}}"
+    indicator-active-color="{{indicatorActiveColor}}"
+    circular="{{circular}}"
+    >
+        <swiper-item>
+              <image src="../image/banner1.jpg"></image>
+        </swiper-item>
+        <swiper-item>
+              <image src="../image/banner2.jpg"></image>
+        </swiper-item>
+        <swiper-item>
+              <image src="../image/banner3.jpg"></image>
+        </swiper-item>
+    </swiper>
+    <block wx:for="{{loveContent}}" wx:key="key">
+    <view class="content-detail">
+          <view class="detail-title">
+                <image src="{{item.userLogo}}" class="user-logo"></image>
+                <text class="user-name">{{item.userName}}</text>
+                <text>{{item.date}}</text>
+          </view>
+          <view class="content-title">{{item.title}}</view>
+          <image src="{{item.titleImage}}" class="user-img"></image>
+          <view class="love-detail">
+               {{item.contentDetail}}
+          </view>
+          <view class="comment">
+              <text class="fa fa-star changeFont"></text>
+              <text class="changeSmall">{{item.star}}</text>
+              <text class="fa fa-comments changeFont"></text>
+              <text class="changeSmall">{{item.comments}}</text>
+          </view>
+    </view>
+    </block>
+</view>
